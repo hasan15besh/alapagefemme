@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>à la PAGE | Women's fashion</title>
+  <meta name="description" content="New season knitwear, coats, trousers and more from à la PAGE. Pick your pieces and send your order on WhatsApp.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="à la PAGE">
+  <meta property="og:description" content="New season knitwear, coats, trousers and more. Order on WhatsApp.">
+  <meta property="og:image" content="images/cardigan-sunbeam.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Crect x='6' y='6' width='20' height='20' fill='none' stroke='%23ff2e93' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/hanken-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#shop">Skip to the shop</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="#top" aria-label="à la PAGE, home">
+        <span class="logo__frame"><span class="logo__script">à la</span></span>
+        <span class="logo__word">PAGE</span>
+        <span class="logo__dot" aria-hidden="true"></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main">
+        <a href="#shop">Shop</a>
+        <a href="#lookbook">Lookbook</a>
+        <a href="#visit">Visit us</a>
+      </nav>
+
+      <div class="header-tools">
+        <button class="icon-btn" id="searchBtn" aria-label="Search the shop">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        </button>
+        <button class="icon-btn" id="savedBtn" aria-label="Show saved pieces" aria-pressed="false">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20.5s-8-4.9-8-11A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5c0 6.1-8 11-8 11Z"/></svg>
+          <span class="count" id="savedCount" hidden>0</span>
+        </button>
+        <button class="icon-btn" id="bagBtn" aria-label="Open your bag">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="count" id="bagCount" hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <h1 id="heroTitle"><span>Soft knits for</span> <span>the cold months</span></h1>
+          <p>The new season is in: cardigans, coats and trousers in warm browns, creams and one very good leopard collar. Choose your pieces and send the order on WhatsApp.</p>
+          <div class="hero__cta">
+            <a class="btn btn--light" href="#shop">Shop new in</a>
+            <a class="btn btn--ghost" href="#lookbook">See the lookbook</a>
+          </div>
+        </div>
+        <figure class="hero__figure">
+          <div class="frame">
+            <img src="images/cardigan-sunbeam.jpg" alt="Model in a brown cardigan with a leopard-print collar, standing in a beam of sunlight against a concrete wall" width="572" height="1024" fetchpriority="high">
+          </div>
+          <figcaption>
+            <span>Leopard Collar Cardigan</span>
+            <button class="link-btn" data-open="leopard-collar-cardigan">View piece</button>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section class="shop wrap" id="shop" aria-labelledby="shopTitle">
+      <div class="shop__head">
+        <h2 id="shopTitle">Shop</h2>
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+        <div class="toolbar__right">
+          <label class="search">
+            <span class="sr">Search pieces</span>
+            <input id="searchInput" type="search" placeholder="Search pieces" autocomplete="off">
+          </label>
+          <label class="sort">
+            <span class="sr">Sort by</span>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="new">New in first</option>
+              <option value="low">Price, low to high</option>
+              <option value="high">Price, high to low</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden>
+        <p>No pieces match that search.</p>
+        <button class="btn btn--dark" id="clearFilters">Show everything</button>
+      </div>
+    </section>
+
+    <!-- Lookbook -->
+    <section class="look" id="lookbook" aria-labelledby="lookTitle">
+      <div class="wrap">
+        <h2 id="lookTitle">Lookbook</h2>
+        <div class="look__grid">
+          <figure class="look__a">
+            <img src="images/cardigan-catalog.jpg" alt="Model in the leopard collar cardigan with cream trousers against a pale stone wall" loading="lazy" width="825" height="1024">
+          </figure>
+          <figure class="look__b">
+            <img src="images/cardigan-flatlay.jpg" alt="The cardigan laid flat, showing the fabric-covered buttons and leopard collar" loading="lazy" width="1000" height="1200">
+            <figcaption>The buttons and collar up close.</figcaption>
+          </figure>
+          <div class="look__text">
+            <h3>Brown, cream and a little leopard</h3>
+            <p>One cardigan, two ways: black trousers in hard afternoon light, or cream trousers against stone. Both work because the collar does the talking.</p>
+            <button class="btn btn--light" data-open="leopard-collar-cardigan">Shop the cardigan</button>
+          </div>
+        </div>
+
+        <h3 class="looks__title">More looks</h3>
+        <div class="looks">
+          <figure class="look-card">
+            <img src="images/look-bus-cream-burgundy.jpg" alt="Model on the open top deck of a red bus in a cream funnel-neck top with gold buttons and burgundy wide-leg trousers" loading="lazy" width="928" height="1152">
+            <figcaption>
+              <p>Cream and burgundy</p>
+              <div class="look-card__links">
+                <button class="link-btn" data-open="gold-button-funnel-neck-top">Shop the top</button>
+                <button class="link-btn" data-open="burgundy-ribbed-wide-leg-trousers">Shop the trousers</button>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="look-card">
+            <img src="images/look-crosswalk-front.jpg" alt="Model crossing the street in an oatmeal bell-sleeve cardigan with gold buttons and black faux-leather trousers" loading="lazy" width="928" height="1152">
+            <figcaption>
+              <p>Oatmeal and black leather</p>
+              <div class="look-card__links">
+                <button class="link-btn" data-open="gold-button-bell-sleeve-cardigan">Shop the cardigan</button>
+                <button class="link-btn" data-open="black-faux-leather-wide-leg-trousers">Shop the trousers</button>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit -->
+    <section class="visit wrap" id="visit" aria-labelledby="visitTitle">
+      <div class="visit__info">
+        <h2 id="visitTitle">Visit us</h2>
+        <address id="visitAddress"></address>
+        <dl class="hours" id="visitHours"></dl>
+        <p class="hours-note">Hours as listed on Google Maps.</p>
+        <div class="visit__cta">
+          <a class="btn btn--dark" id="callLink" href="#">Call the shop</a>
+          <a class="btn btn--outline" id="waLink" href="#" target="_blank" rel="noopener">Message on WhatsApp</a>
+          <a class="btn btn--outline" id="dirLink" href="#" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <div class="visit__map">
+        <iframe id="mapFrame" title="Map showing the à la PAGE boutique" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <a class="logo logo--lg" href="#top" aria-label="à la PAGE, back to top">
+        <span class="logo__frame"><span class="logo__script">à la</span></span>
+        <span class="logo__word">PAGE</span>
+        <span class="logo__dot" aria-hidden="true"></span>
+      </a>
+      <p class="footer-note">Demo website concept. Not the official à la PAGE site. Products and prices are placeholders.</p>
+      <p class="footer-copy">© <span id="year"></span> à la PAGE</p>
+    </div>
+  </footer>
+
+  <!-- Product dialog -->
+  <dialog class="product" id="productDialog" aria-labelledby="pdName">
+    <button class="close" data-close aria-label="Close">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 5l14 14M19 5 5 19"/></svg>
+    </button>
+    <div class="product__body" id="productBody"></div>
+  </dialog>
+
+  <!-- Bag drawer -->
+  <dialog class="drawer" id="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer__head">
+      <h2 id="drawerTitle">Your bag</h2>
+      <button class="close close--inline" data-close aria-label="Close your bag">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+    </div>
+    <div class="drawer__body" id="drawerBody"></div>
+    <div class="drawer__foot" id="drawerFoot"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

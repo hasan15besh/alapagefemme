@@ -1,0 +1,9 @@
+{
+  "name": "ala-page-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo storefront for à la PAGE. Static site, no build step.",
+  "scripts": {
+    "dev": "npx serve ."
+  }
+}
